@@ -1,1 +1,34 @@
 Siren is a alerting system which has intelligence to suppress 99% false alert. It can send alerts through Email, SMS and Call. Alert types are configurable per module. Plug and Play interface is available to any module can be added and removed as per business needs.
+
+SKYNET is built to solve this challenge and initiate our artificial intelligence for IT operations (AIOps) journey by implementing big data, advanced analytics and machine learning (ML). Skynet will be the key observability platform for CCIB applications covering transaction banking & CC CF. SKYNET on-premise carters for all key applications with 15+ client journeys. Below are key features of SKYNET
+
+ELK stack & Kafka on distributed Microservice architecture
+
+Stateful where session management will be handle in ELK stack with sticky session
+
+Automated failover transparent
+Traffic load-balanced on high load or failures
+Sessions stored in the application with sticky session
+Cache is through Redis
+Leverage on  Confluent Kafka message bus for messaging
+
+SKYNET built in process monitoring will be used to monitor all the process and send alert in the initial stage.  
+ELK service will be used for streaming logs to Kibana via Kafka Topic for application monitoring
+
+Siren will be integrated with Skynet for application and log monitoring
+Sending alerts through Email, SMS and Call
+
+Skynet will consists of deployment and rollback instructions.  There could be changes on application layer on EKS elasticsearch and kafka.  
+Rollback will be to the previous production version before rollover (each deployment will have a unique version number released to production) in case of deployment failure for any case.
+Rollback is a decision in the Go / No Call with the complete team involved in the release (development heads, stakeholders, UVT users etc)
+
+Blue-Green approach or rolling upgrade or describe any other methods to perform zero down-time maintenance.
+Rolling updates allow Deployments to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources
+
+Rolling updates allow the following actions:
+
+Promote an application from one environment to another (via container image updates)
+Rollback to previous versions
+Continuous Integration and Continuous Delivery of applications with zero downtime
+
+The maximum RTO in case of any outage for a BC1 rated application is 24 hours. Provided below are the recovery capabilities and strategy built into the system to provide the necessary RTO.
